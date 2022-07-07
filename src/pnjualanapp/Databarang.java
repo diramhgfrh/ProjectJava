@@ -1,6 +1,7 @@
+package pnjualanapp;
 
 
-
+import MenuUtama.MenuUtama;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -117,6 +118,8 @@ public class Databarang extends javax.swing.JFrame {
         hrgjual = new javax.swing.JTextField();
         hrgbeli = new javax.swing.JTextField();
         tcari = new javax.swing.JTextField();
+        kembali = new javax.swing.JToggleButton();
+        Keluar = new javax.swing.JToggleButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -203,7 +206,7 @@ public class Databarang extends javax.swing.JFrame {
                 btnhapusActionPerformed(evt);
             }
         });
-        panel2.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
+        panel2.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, -1, -1));
 
         btntambah.setText("Tambah");
         btntambah.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +214,7 @@ public class Databarang extends javax.swing.JFrame {
                 btntambahActionPerformed(evt);
             }
         });
-        panel2.add(btntambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
+        panel2.add(btntambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
 
         btnedit.setText("Edit");
         btnedit.addActionListener(new java.awt.event.ActionListener() {
@@ -219,7 +222,7 @@ public class Databarang extends javax.swing.JFrame {
                 btneditActionPerformed(evt);
             }
         });
-        panel2.add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
+        panel2.add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
 
         stok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,6 +273,22 @@ public class Databarang extends javax.swing.JFrame {
             }
         });
         panel2.add(tcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 240, 30));
+
+        kembali.setText("Kembali");
+        kembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliActionPerformed(evt);
+            }
+        });
+        panel2.add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
+
+        Keluar.setText("Keluar");
+        Keluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KeluarActionPerformed(evt);
+            }
+        });
+        panel2.add(Keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, -1, -1));
 
         getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 770, 420));
 
@@ -418,6 +437,18 @@ public class Databarang extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tcariKeyReleased
 
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+        // TODO add your handling code here:
+         MenuUtama fb = new MenuUtama();
+        fb.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_kembaliActionPerformed
+
+    private void KeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KeluarActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_KeluarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -454,6 +485,7 @@ public class Databarang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Keluar;
     private javax.swing.JButton btnedit;
     private javax.swing.JButton btnhapus;
     private javax.swing.JButton btnsimpan;
@@ -465,6 +497,7 @@ public class Databarang extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField kdbarang;
+    private javax.swing.JToggleButton kembali;
     private javax.swing.JLabel kodebr;
     private javax.swing.JLabel labelhargabeli;
     private javax.swing.JLabel labelhargajual;
