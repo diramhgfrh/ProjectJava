@@ -14,5 +14,5 @@ public class aktiftombol {
     public static void main (String[]args){
         new tombolcuan().setVisible(true);
     }
-    
-}
+
+ 

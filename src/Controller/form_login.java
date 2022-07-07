@@ -120,7 +120,7 @@ public class form_login extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-         MenuUtama fb = new MenuUtama();
+        MenuUtama fb = new MenuUtama();
         fb.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_loginActionPerformed

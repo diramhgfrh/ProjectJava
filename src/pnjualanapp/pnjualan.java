@@ -97,7 +97,7 @@ public class pnjualan extends javax.swing.JFrame {
         model.addColumn("Kode Barang");
         model.addColumn("Nama Barang");
         model.addColumn("Satuan");
-        model.addColumn("Stok");
+        model.addColumn("Jumlah Stok");
         model.addColumn("Harga Jual");
         jTable2.setModel(model);
     }
@@ -387,7 +387,7 @@ public class pnjualan extends javax.swing.JFrame {
                                 .addComponent(btntambah1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btntambah2)))
-                        .addGap(0, 101, Short.MAX_VALUE)))
+                        .addGap(0, 81, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -569,8 +569,7 @@ public class pnjualan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -626,7 +625,7 @@ public class pnjualan extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
+            .addGap(0, 739, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -686,13 +685,12 @@ public class pnjualan extends javax.swing.JFrame {
         jDialog1.setVisible(true);
         jDialog1.setBounds(300, 300, 472, 390);
         txtcari1.requestFocus();
+
+
     }//GEN-LAST:event_btnpilihActionPerformed
 
     private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
-        DefaultTableModel test = (DefaultTableModel)jTable1.getModel();
-        test.getDataVector().removeAllElements();
-        JOptionPane.showMessageDialog(this, "Data Berhasil Disimpan..!!");
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnsimpanActionPerformed
 
     private void tgltransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgltransaksiActionPerformed
@@ -762,7 +760,7 @@ public class pnjualan extends javax.swing.JFrame {
 
     private void btntambah1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntambah1ActionPerformed
         // TODO add your handling code here:
-          if (kdbarang.getText().equals("") || nonota.getText().equals("") || nmbarang.getText().equals("") || nama_pembeli.getText().equals("")
+        if (kdbarang.getText().equals("") || nonota.getText().equals("") || nmbarang.getText().equals("") || nama_pembeli.getText().equals("")
                 || hargajual.getText().equals("") || jmlhbeli.getText().equals("") || ttotal.getText().equals("") || ttunai.getText().equals("")
                 || tkembali.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Data Harus Lengkap");
@@ -770,11 +768,11 @@ public class pnjualan extends javax.swing.JFrame {
             int jml = Integer.parseInt(jmlhbeli.getText());
             int stok = Integer.parseInt(nonota1.getText());
             if (jml > stok) {
-                JOptionPane.showMessageDialog(this, "stok barang tidak cukup");
+                JOptionPane.showMessageDialog(this, "stok obat tidak cukup");
             } else {
                 ListDb = pc.CekBarang(nonota.getText(), kdbarang.getText());
                 if (ListDb.size() > 0) {
-                    JOptionPane.showMessageDialog(this, "barang ini sudah Anda beli, silahkan pilih yang lain");
+                    JOptionPane.showMessageDialog(this, "Barang ini sudah Anda beli, silahkan pilih yang lain");
                 } else {
                     int harga = Integer.parseInt(hargajual.getText());
                     DataPenjualan dp = new DataPenjualan();
@@ -791,10 +789,9 @@ public class pnjualan extends javax.swing.JFrame {
                         cb.updateStock(stok, kdbarang.getText());
                         buatTablebeli();
                         tampilBeli();
-                        int total=Integer.parseInt(ttotal.getText());
-                        int totalBayar=total+(harga*jml);
+                        int total = Integer.parseInt(ttotal.getText());
+                        int totalBayar = total + (harga * jml);
                         ttotal.setText(Integer.toString(totalBayar));
-                        JOptionPane.showMessageDialog(this, "Data Telah Ditambahkan");
                         kdbarang.setText(null);
                         nmbarang.setText("");
                         hargajual.setText(null);

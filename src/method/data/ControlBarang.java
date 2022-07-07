@@ -145,7 +145,7 @@ try{
 
 public ArrayList caribarangdengancode(String kdbarang){
     ArrayList LogBarang= new ArrayList();
-sql = "select kode_barang, namabarang,satuan, stok, harga_kontrak,hargabeli from tbbarang where kode_barang='"+kdbarang+"' ";
+sql = "select kode_barang, namabarang,satuan, stok, ,hargabeli from tbbarang where kode_barang='"+kdbarang+"' ";
         try{
 rs= st.executeQuery(sql);
         while (rs.next()){
